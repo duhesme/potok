@@ -10,7 +10,7 @@
 		41C38C71B5C31C9FBFFEA017 /* Pods_potok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EABA9271EDEFAEEAEA0869 /* Pods_potok.framework */; };
 		84899A5F28465CC60015A72E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84899A5E28465CC60015A72E /* AppDelegate.swift */; };
 		84899A6128465CC60015A72E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84899A6028465CC60015A72E /* SceneDelegate.swift */; };
-		84899A6328465CC60015A72E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84899A6228465CC60015A72E /* ViewController.swift */; };
+		84899A6328465CC60015A72E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84899A6228465CC60015A72E /* FeedViewController.swift */; };
 		84899A6628465CC60015A72E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84899A6428465CC60015A72E /* Main.storyboard */; };
 		84899A6928465CC60015A72E /* potok.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84899A6728465CC60015A72E /* potok.xcdatamodeld */; };
 		84899A6B28465CC70015A72E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84899A6A28465CC70015A72E /* Assets.xcassets */; };
@@ -19,6 +19,9 @@
 		84899A79284663490015A72E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84899A78284663490015A72E /* Colors.xcassets */; };
 		84899A802846661D0015A72E /* Generated in Resources */ = {isa = PBXBuildFile; fileRef = 84899A7E2846661D0015A72E /* Generated */; };
 		84899A812846661D0015A72E /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 84899A7F2846661D0015A72E /* en.lproj */; };
+		84899A84284680250015A72E /* FeedViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84899A83284680250015A72E /* FeedViewController+Constraints.swift */; };
+		84899A8A2846CF4D0015A72E /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84899A882846CF4D0015A72E /* FeedCollectionViewCell.swift */; };
+		84899A8B2846CF4D0015A72E /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84899A892846CF4D0015A72E /* FeedCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +30,7 @@
 		84899A5B28465CC60015A72E /* potok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = potok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84899A5E28465CC60015A72E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84899A6028465CC60015A72E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84899A6228465CC60015A72E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84899A6228465CC60015A72E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		84899A6528465CC60015A72E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84899A6828465CC60015A72E /* potok.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = potok.xcdatamodel; sourceTree = "<group>"; };
 		84899A6A28465CC70015A72E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +40,9 @@
 		84899A78284663490015A72E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		84899A7E2846661D0015A72E /* Generated */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Generated; sourceTree = "<group>"; };
 		84899A7F2846661D0015A72E /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		84899A83284680250015A72E /* FeedViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+Constraints.swift"; sourceTree = "<group>"; };
+		84899A882846CF4D0015A72E /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		84899A892846CF4D0015A72E /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		EBB2F48649863BBBFE074817 /* Pods-potok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-potok.debug.xcconfig"; path = "Target Support Files/Pods-potok/Pods-potok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +101,7 @@
 				84899A7E2846661D0015A72E /* Generated */,
 				84899A5E28465CC60015A72E /* AppDelegate.swift */,
 				84899A6028465CC60015A72E /* SceneDelegate.swift */,
-				84899A6228465CC60015A72E /* ViewController.swift */,
+				84899A85284683D10015A72E /* View */,
 				84899A6428465CC60015A72E /* Main.storyboard */,
 				84899A6A28465CC70015A72E /* Assets.xcassets */,
 				84899A6C28465CC70015A72E /* LaunchScreen.storyboard */,
@@ -104,6 +110,33 @@
 				84899A78284663490015A72E /* Colors.xcassets */,
 			);
 			path = potok;
+			sourceTree = "<group>";
+		};
+		84899A82284680090015A72E /* FeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84899A6228465CC60015A72E /* FeedViewController.swift */,
+				84899A83284680250015A72E /* FeedViewController+Constraints.swift */,
+			);
+			path = FeedViewController;
+			sourceTree = "<group>";
+		};
+		84899A85284683D10015A72E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84899A82284680090015A72E /* FeedViewController */,
+				84899A8C2846CF520015A72E /* FeedCollectionViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84899A8C2846CF520015A72E /* FeedCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84899A882846CF4D0015A72E /* FeedCollectionViewCell.swift */,
+				84899A892846CF4D0015A72E /* FeedCollectionViewCell.xib */,
+			);
+			path = FeedCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +206,7 @@
 				84899A802846661D0015A72E /* Generated in Resources */,
 				84899A6B28465CC70015A72E /* Assets.xcassets in Resources */,
 				84899A6628465CC60015A72E /* Main.storyboard in Resources */,
+				84899A8B2846CF4D0015A72E /* FeedCollectionViewCell.xib in Resources */,
 				84899A77284662EC0015A72E /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,8 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84899A6328465CC60015A72E /* ViewController.swift in Sources */,
+				84899A6328465CC60015A72E /* FeedViewController.swift in Sources */,
 				84899A5F28465CC60015A72E /* AppDelegate.swift in Sources */,
+				84899A8A2846CF4D0015A72E /* FeedCollectionViewCell.swift in Sources */,
+				84899A84284680250015A72E /* FeedViewController+Constraints.swift in Sources */,
 				84899A6128465CC60015A72E /* SceneDelegate.swift in Sources */,
 				84899A6928465CC60015A72E /* potok.xcdatamodeld in Sources */,
 			);
