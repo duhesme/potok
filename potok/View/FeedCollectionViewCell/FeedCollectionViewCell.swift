@@ -19,7 +19,6 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setUpConstraints()
     }
 
@@ -30,7 +29,8 @@ class FeedCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(v)
         v.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.height.width.equalTo(100)
+            make.width.equalTo(UIScreen.main.bounds.width)
+            make.height.equalTo(UIScreen.main.bounds.height)
         }
     }
     
