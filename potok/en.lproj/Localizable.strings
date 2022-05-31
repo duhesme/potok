@@ -1,0 +1,10 @@
+//
+//  Localizable.strings
+//  imgeye
+//
+//  Created by Никита Владимирович on 31.05.2022.
+//
+
+// Feed
+"Feed.Navigation.Title" = "Feed";
+"Feed.Popup.DownloadingFailed" = "Failed to download photos";
