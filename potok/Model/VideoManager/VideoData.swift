@@ -8,5 +8,12 @@
 import Foundation
 
 struct VideoData: Decodable {
-    
+    let id: Int
+    let url: String
+    let video_files: [VideoFileData]
+}
+
+struct VideoFileData: Decodable {
+    let id: Int
+    let link: String
 }

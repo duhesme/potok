@@ -8,5 +8,6 @@
 import Foundation
 
 struct VideoModel {
-    
+    let id: Int
+    let url: URL
 }

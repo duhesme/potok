@@ -60,9 +60,16 @@ class VideoManager {
     private func parseJSON(_ videoData: Data) -> [VideoModel]? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode([VideoData].self, from: videoData)
+            let decodedData = try decoder.decode(PopularVideosData.self, from: videoData)
             
-            return [VideoModel()]
+            var videos = [VideoModel]()
+            for video in decodedData.videos {
+                if let videoURL = URL(string: video.video_files[0].link) {
+                    videos.append(VideoModel(id: video.id, url: videoURL))
+                }
+            }
+            
+            return videos
         } catch {
             print(error)
             delegate?.didFailWithErrorDownloadingUser(error: error)
