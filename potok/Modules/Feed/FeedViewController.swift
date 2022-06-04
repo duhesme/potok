@@ -7,12 +7,12 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, FeedViewProtocol {
+class FeedViewController: UIViewController, FeedViewProtocol, UITableViewDataSource {
 
     var presenter: FeedPresenterProtocol!
     let assembly: FeedAssemblyProtocol = FeedAssembly()
     
-    var feedCollectionView: UICollectionView!
+    var feedTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,18 @@ class FeedViewController: UIViewController, FeedViewProtocol {
         assembly.assemble(withViewController: self)
         presenter.configureView()
         
-        feedCollectionView.register(FeedCollectionViewCell.nib, forCellWithReuseIdentifier: FeedCollectionViewCell.identifier)
-        feedCollectionView.dataSource = self
+        feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.identifier)
+        feedTableView.dataSource = self
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier) as! FeedTableViewCell
+        
+        return cell
     }
     
     func addVideos() {
@@ -30,16 +40,3 @@ class FeedViewController: UIViewController, FeedViewProtocol {
     }
 
 }
-
-extension FeedViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.identifier, for: indexPath) as! FeedCollectionViewCell
-    }
-    
-}
-

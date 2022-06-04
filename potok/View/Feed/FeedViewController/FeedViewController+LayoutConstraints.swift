@@ -11,17 +11,21 @@ import UIKit
 extension FeedViewController {
     
     func setUpLayoutConstraints() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.height)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        feedCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        feedCollectionView.frame = view.bounds
-        feedCollectionView.isPagingEnabled = true
-        feedCollectionView.backgroundColor = .black
-        view.addSubview(feedCollectionView)
-        feedCollectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        feedTableView = UITableView(frame: .zero, style: .plain)
+        feedTableView.rowHeight = UIScreen.main.bounds.height
+        feedTableView.separatorStyle = .none
+        feedTableView.isPagingEnabled = true
+        feedTableView.bounces = false
+        feedTableView.showsVerticalScrollIndicator = false
+        feedTableView.estimatedSectionHeaderHeight = CGFloat.leastNormalMagnitude
+        feedTableView.sectionHeaderHeight = CGFloat.leastNormalMagnitude
+        feedTableView.estimatedSectionFooterHeight = CGFloat.leastNormalMagnitude
+        feedTableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
+        feedTableView.contentInsetAdjustmentBehavior = .never
+        feedTableView.backgroundColor = .red
+        view.addSubview(feedTableView)
+        feedTableView.snp.makeConstraints { make in
+            make.edges.equalTo(self.view)
         }
     }
     

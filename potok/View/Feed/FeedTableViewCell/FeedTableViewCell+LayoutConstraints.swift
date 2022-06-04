@@ -1,34 +1,16 @@
 //
-//  FeedCollectionViewCell.swift
+//  FeedTableViewCell+LayoutConstraints.swift
 //  potok
 //
-//  Created by Никита Владимирович on 01.06.2022.
+//  Created by Никита Владимирович on 04.06.2022.
 //
 
 import SnapKit
 
-class FeedCollectionViewCell: UICollectionViewCell {
+extension FeedTableViewCell {
     
-    class var identifier: String {
-        return "FeedCollectionViewCell"
-    }
-    
-    class var nib: UINib {
-        return UINib(nibName: "FeedCollectionViewCell", bundle: nil)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setUpLayoutConstraints()
-    }
-
-    var authorDetailsButton = BounceButton()
-    var likeButton          = BounceButton()
-    var commentsButton      = BounceButton()
-    var shareButton         = BounceButton()
-    
-    private func setUpLayoutConstraints() {
-        contentView.backgroundColor = .white
+    func setUpLayoutConstraints() {
+        contentView.backgroundColor = .black
         
         let actualContentView = UIView()
         contentView.addSubview(actualContentView)
