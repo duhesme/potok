@@ -6,14 +6,16 @@
 //
 
 import SnapKit
+import AVFoundation
 
 extension FeedTableViewCell {
     
     func setUpLayoutConstraints() {
-        contentView.backgroundColor = .black
+        contentView.backgroundColor = .yellow
+        contentView.clipsToBounds = true
         
-        let actualContentView = UIView()
         contentView.addSubview(actualContentView)
+        
         actualContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -25,7 +27,7 @@ extension FeedTableViewCell {
         controlsStackView.distribution = .fillEqually
         controlsStackView.axis = .vertical
         controlsStackView.alignment = .center
-        actualContentView.addSubview(controlsStackView)
+        contentView.addSubview(controlsStackView)
         controlsStackView.snp.makeConstraints { make in
             make.right.equalToSuperview()
             make.bottom.equalToSuperview().inset(60)
@@ -41,6 +43,9 @@ extension FeedTableViewCell {
                 make.right.left.equalToSuperview()
             }
         }
+        
+        actualContentView.clipsToBounds = true
+        contentView.sendSubviewToBack(actualContentView)
     }
     
 }
