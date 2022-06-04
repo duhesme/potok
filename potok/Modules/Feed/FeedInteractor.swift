@@ -11,8 +11,11 @@ class FeedInteractor: FeedInteractorProtocol {
     
     weak var presenter: FeedPresenterProtocol!
     
+    var videoManager = VideoManager()
+    
     required init(presenter: FeedPresenterProtocol) {
         self.presenter = presenter
+        videoManager.downloadPopularVideos()
     }
     
     func downloadVideo() {

@@ -24,6 +24,9 @@
 		84899A8B2846CF4D0015A72E /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84899A892846CF4D0015A72E /* FeedCollectionViewCell.xib */; };
 		84CC122C284B70EF00106A46 /* FeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC122B284B70EF00106A46 /* FeedProtocols.swift */; };
 		84CC122E284B86C700106A46 /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC122D284B86C700106A46 /* BounceButton.swift */; };
+		84CC1230284B98D400106A46 /* VideoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC122F284B98D400106A46 /* VideoData.swift */; };
+		84CC1232284B98DB00106A46 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC1231284B98DB00106A46 /* VideoModel.swift */; };
+		84CC1234284B9D1900106A46 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC1233284B9D1900106A46 /* Constants.swift */; };
 		84CF9257284A96E700ED0719 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF9256284A96E700ED0719 /* FeedPresenter.swift */; };
 		84CF9259284A96F500ED0719 /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF9258284A96F500ED0719 /* FeedInteractor.swift */; };
 		84CF925B284A970400ED0719 /* FeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF925A284A970400ED0719 /* FeedAssembly.swift */; };
@@ -51,6 +54,9 @@
 		84899A892846CF4D0015A72E /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		84CC122B284B70EF00106A46 /* FeedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProtocols.swift; sourceTree = "<group>"; };
 		84CC122D284B86C700106A46 /* BounceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
+		84CC122F284B98D400106A46 /* VideoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoData.swift; sourceTree = "<group>"; };
+		84CC1231284B98DB00106A46 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		84CC1233284B9D1900106A46 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84CF9256284A96E700ED0719 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		84CF9258284A96F500ED0719 /* FeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInteractor.swift; sourceTree = "<group>"; };
 		84CF925A284A970400ED0719 /* FeedAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAssembly.swift; sourceTree = "<group>"; };
@@ -99,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				8440B8EF2848FEC600A00362 /* VideoManager.swift */,
+				84CC122F284B98D400106A46 /* VideoData.swift */,
+				84CC1231284B98DB00106A46 /* VideoModel.swift */,
 			);
 			path = VideoManager;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 				84899A6F28465CC70015A72E /* Info.plist */,
 				84899A6728465CC60015A72E /* potok.xcdatamodeld */,
 				84899A78284663490015A72E /* Colors.xcassets */,
+				84CC1233284B9D1900106A46 /* Constants.swift */,
 			);
 			path = potok;
 			sourceTree = "<group>";
@@ -342,11 +351,14 @@
 				84899A8A2846CF4D0015A72E /* FeedCollectionViewCell.swift in Sources */,
 				84CF925B284A970400ED0719 /* FeedAssembly.swift in Sources */,
 				84CC122E284B86C700106A46 /* BounceButton.swift in Sources */,
+				84CC1234284B9D1900106A46 /* Constants.swift in Sources */,
 				84CF925D284A971000ED0719 /* FeedRouter.swift in Sources */,
 				8440B8F02848FEC600A00362 /* VideoManager.swift in Sources */,
+				84CC1230284B98D400106A46 /* VideoData.swift in Sources */,
 				84899A84284680250015A72E /* FeedViewController+LayoutConstraints.swift in Sources */,
 				84899A6128465CC60015A72E /* SceneDelegate.swift in Sources */,
 				84899A6928465CC60015A72E /* potok.xcdatamodeld in Sources */,
+				84CC1232284B98DB00106A46 /* VideoModel.swift in Sources */,
 				84CF9259284A96F500ED0719 /* FeedInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

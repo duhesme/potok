@@ -13,7 +13,7 @@ class FeedViewController: UIViewController, FeedViewProtocol {
     let assembly: FeedAssemblyProtocol = FeedAssembly()
     
     var feedCollectionView: UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayoutConstraints()
