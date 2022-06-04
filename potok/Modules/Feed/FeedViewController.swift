@@ -5,18 +5,28 @@
 //  Created by Никита Владимирович on 31.05.2022.
 //
 
-import SnapKit
+import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, FeedViewProtocol {
 
+    var presenter: FeedPresenterProtocol!
+    let assembly: FeedAssemblyProtocol = FeedAssembly()
+    
     var feedCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayoutConstraints()
         
+        assembly.assemble(withViewController: self)
+        presenter.configureView()
+        
         feedCollectionView.register(FeedCollectionViewCell.nib, forCellWithReuseIdentifier: FeedCollectionViewCell.identifier)
         feedCollectionView.dataSource = self
+    }
+    
+    func addVideos() {
+        print("adding videos...")
     }
 
 }

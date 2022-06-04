@@ -25,12 +25,10 @@ class FeedCollectionViewCell: UICollectionViewCell {
     private func setUpConstraints() {
         contentView.backgroundColor = .white
         
-        let v = UIView()
-        contentView.addSubview(v)
-        v.snp.makeConstraints { make in
+        let actualContentView = UIView()
+        contentView.addSubview(actualContentView)
+        actualContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.width.equalTo(UIScreen.main.bounds.width)
-            make.height.equalTo(UIScreen.main.bounds.height)
         }
     }
     
