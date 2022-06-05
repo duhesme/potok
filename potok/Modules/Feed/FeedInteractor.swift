@@ -15,7 +15,7 @@ class FeedInteractor: FeedInteractorProtocol {
     
     required init(presenter: FeedPresenterProtocol) {
         self.presenter = presenter
-        videoManager.downloadPopularVideos()
+//        videoManager.downloadPopularVideos()
     }
     
     func downloadVideo() {

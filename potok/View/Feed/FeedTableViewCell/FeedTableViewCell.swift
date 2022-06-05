@@ -29,6 +29,7 @@ class FeedTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpLayoutConstraints()
+        playVideo()
     }
     
     required init?(coder: NSCoder) {
@@ -36,7 +37,7 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     func playVideo() {
-        let videoURL = URL(string: "https://vod-progressive.akamaized.net/exp=1654384401~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4242%2F11%2F296210754%2F1127677370.mp4~hmac=2f357180262fcd619ee4319c137147d8e85acb844bffcb280dc2b8dc0c2e48fa/vimeo-prod-skyfire-std-us/01/4242/11/296210754/1127677370.mp4?filename=Pexels+Videos+1526909.mp4")!
+        let videoURL = URL(string: "https://player.vimeo.com/external/296210754.hd.mp4?s=08c03c14c04f15d65901f25b542eb2305090a3d7&profile_id=175&oauth2_token_id=57447761")!
         let duration = 10
         
         player = AVQueuePlayer()
@@ -48,9 +49,9 @@ class FeedTableViewCell: UITableViewCell {
             timeRange: CMTimeRange(start: .zero, end: CMTimeMake(value: Int64(duration), timescale: 1))
         )
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        playerLayer.frame = actualContentView.layer.bounds
+        playerLayer.frame = UIScreen.main.bounds //actualContentView.layer.bounds
         actualContentView.layer.insertSublayer(playerLayer, at: 1)
         player.play()
     }
-
+    
 }

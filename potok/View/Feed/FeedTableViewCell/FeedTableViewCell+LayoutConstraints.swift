@@ -16,6 +16,7 @@ extension FeedTableViewCell {
         
         contentView.addSubview(actualContentView)
         
+        actualContentView.backgroundColor = .blue
         actualContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

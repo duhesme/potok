@@ -31,7 +31,6 @@ class FeedViewController: UIViewController, FeedViewProtocol, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier) as! FeedTableViewCell
-        cell.playVideo()
         return cell
     }
     
