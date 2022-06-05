@@ -30,10 +30,10 @@ extension FeedTableViewCell {
         controlsStackView.alignment = .center
         contentView.addSubview(controlsStackView)
         controlsStackView.snp.makeConstraints { make in
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().inset(4)
             make.bottom.equalToSuperview().inset(60)
-            make.width.equalTo(60)
-            make.height.equalTo(280)
+            make.width.equalTo(50)
+            make.height.equalTo(200)
         }
         
         let controlButtons = [authorDetailsButton, likeButton, commentsButton, shareButton]

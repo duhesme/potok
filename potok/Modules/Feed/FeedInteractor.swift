@@ -15,11 +15,28 @@ class FeedInteractor: FeedInteractorProtocol {
     
     required init(presenter: FeedPresenterProtocol) {
         self.presenter = presenter
-//        videoManager.downloadPopularVideos()
+        videoManager.delegate = self
+        downloadVideo()
     }
     
     func downloadVideo() {
-        print("[FeedInteractor] downloading videos...")
+        videoManager.downloadPopularVideos()
+    }
+    
+}
+
+extension FeedInteractor: VideoMangerDelegate {
+    
+    func didDownloadVideos(_ videoManager: VideoManager, videos: [VideoModel]) {
+        let videoEntities = videos.map {
+            return VideoEntity(videoURL: $0.url, authorURL: $0.pictureURL, duration: $0.duration)
+        }
+        
+        presenter.add(videos: videoEntities)
+    }
+    
+    func didFailWithErrorDownloadingUser(error: Error?) {
+        
     }
     
 }

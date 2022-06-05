@@ -12,9 +12,15 @@ struct VideoData: Decodable {
     let url: String
     let duration: Int
     let video_files: [VideoFileData]
+    let video_pictures: [VideoPicture]
 }
 
 struct VideoFileData: Decodable {
     let id: Int
     let link: String
+}
+
+struct VideoPicture: Decodable {
+    let id: Int
+    let picture: String
 }

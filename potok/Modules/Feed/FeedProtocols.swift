@@ -8,15 +8,18 @@
 import Foundation
 
 protocol FeedViewProtocol: AnyObject {
-    func addVideos()
+    func addVideos(forIndexPaths indexPaths: [IndexPath])
 }
 
 protocol FeedPresenterProtocol: AnyObject {
     var router: FeedRouterProtocol! { set get }
     
+    var videos: [VideoEntity] { get }
+    
     func configureView()
     func likeButtonPressed()
     func saveButtonPressed()
+    func add(videos: [VideoEntity])
 }
 
 protocol FeedInteractorProtocol: AnyObject {
