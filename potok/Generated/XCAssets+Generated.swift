@@ -26,6 +26,7 @@ internal enum Asset {
     internal static let commentButton = ImageAsset(name: "comment-button")
     internal static let likeButtonRed = ImageAsset(name: "like-button-red")
     internal static let likeButton = ImageAsset(name: "like-button")
+    internal static let shareButton = ImageAsset(name: "share-button")
   }
   internal enum Colors {
   }

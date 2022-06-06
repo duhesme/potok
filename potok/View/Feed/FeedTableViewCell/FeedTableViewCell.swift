@@ -40,6 +40,7 @@ class FeedTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         commentsButton.setBackgroundImage(Asset.Assets.commentButton.image, for: .normal)
+        shareButton.setBackgroundImage(Asset.Assets.shareButton.image, for: .normal)
         
         likeButton.addTarget(self, action: #selector(likeButtonPressed), for: .touchUpInside)
         authorDetailsButton.addTarget(self, action: #selector(authorButtonPressed), for: .touchUpInside)
