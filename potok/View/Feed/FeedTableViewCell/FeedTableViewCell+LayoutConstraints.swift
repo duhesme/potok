@@ -11,7 +11,7 @@ import AVFoundation
 extension FeedTableViewCell {
     
     func setUpLayoutConstraints() {
-        contentView.backgroundColor = .yellow
+        contentView.backgroundColor = .clear
         contentView.clipsToBounds = true
         
         contentView.addSubview(actualContentView)
@@ -23,23 +23,23 @@ extension FeedTableViewCell {
         
         // MARK: - Left controls
         let controlsStackView = UIStackView()
-        controlsStackView.backgroundColor = .red
-        controlsStackView.spacing = 0
+        controlsStackView.backgroundColor = .clear
+        controlsStackView.spacing = 12
         controlsStackView.distribution = .fillEqually
         controlsStackView.axis = .vertical
         controlsStackView.alignment = .center
         contentView.addSubview(controlsStackView)
         controlsStackView.snp.makeConstraints { make in
-            make.right.equalToSuperview().inset(4)
+            make.right.equalToSuperview().inset(8)
             make.bottom.equalToSuperview().inset(60)
             make.width.equalTo(50)
-            make.height.equalTo(200)
+            make.height.equalTo(248)
         }
         
         let controlButtons = [authorDetailsButton, likeButton, commentsButton, shareButton]
         for button in controlButtons {
             controlsStackView.addArrangedSubview(button)
-            button.backgroundColor = .purple
+            button.backgroundColor = .clear
             button.snp.makeConstraints { make in
                 make.right.left.equalToSuperview()
             }

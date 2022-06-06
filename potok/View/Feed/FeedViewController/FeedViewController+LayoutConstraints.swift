@@ -22,7 +22,7 @@ extension FeedViewController {
         feedTableView.estimatedSectionFooterHeight = CGFloat.leastNormalMagnitude
         feedTableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
         feedTableView.contentInsetAdjustmentBehavior = .never
-        feedTableView.backgroundColor = .red
+        feedTableView.backgroundColor = .clear
         view.addSubview(feedTableView)
         feedTableView.snp.makeConstraints { make in
             make.edges.equalTo(self.view)
