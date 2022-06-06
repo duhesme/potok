@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate {
+class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate, FeedTableViewCellDelegate {
     
     weak var feedTableView: UITableView!
     
@@ -40,8 +40,13 @@ class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
         cell.configure(withVideoEntity: videos[indexPath.row])
+        cell.delegate = self
         
         return cell
+    }
+    
+    func likeButtonPressed() {
+        print("likeButtonPressed()")
     }
     
 }
