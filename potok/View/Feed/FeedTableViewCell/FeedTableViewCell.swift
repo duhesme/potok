@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import Kingfisher
 
 protocol FeedTableViewCellDelegate: AnyObject {
     func likeButtonPressed()
@@ -45,6 +46,8 @@ class FeedTableViewCell: UITableViewCell {
     
     func configure(withVideoEntity entity: VideoEntity) {
         configureAVPlayer(withVideoURL: entity.videoURL, andDuration: entity.duration)
+        configureAuthorButton(withauthorImageURL: entity.authorURL)
+        updateLikeButtonImage(isFavorite: entity.isFavorite)
         play()
     }
     
@@ -60,6 +63,15 @@ class FeedTableViewCell: UITableViewCell {
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         playerLayer.frame = UIScreen.main.bounds
         actualContentView.layer.insertSublayer(playerLayer, at: 1)
+    }
+    
+    private func configureAuthorButton(withauthorImageURL url: URL) {
+        authorDetailsButton.layer.cornerRadius = 25
+        authorDetailsButton.layer.borderWidth = 2
+        authorDetailsButton.layer.borderColor = UIColor.white.cgColor
+        authorDetailsButton.clipsToBounds = true
+        
+        authorDetailsButton.kf.setBackgroundImage(with: url, for: .normal)
     }
     
     private func updateLikeButtonImage(isFavorite: Bool) {

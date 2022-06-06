@@ -16,7 +16,7 @@ extension FeedTableViewCell {
         
         contentView.addSubview(actualContentView)
         
-        actualContentView.backgroundColor = .blue
+        actualContentView.backgroundColor = .clear
         actualContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -24,7 +24,7 @@ extension FeedTableViewCell {
         // MARK: - Left controls
         let controlsStackView = UIStackView()
         controlsStackView.backgroundColor = .red
-        controlsStackView.spacing = 8
+        controlsStackView.spacing = 0
         controlsStackView.distribution = .fillEqually
         controlsStackView.axis = .vertical
         controlsStackView.alignment = .center
