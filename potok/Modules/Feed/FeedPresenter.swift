@@ -19,7 +19,6 @@ class FeedPresenter: FeedPresenterProtocol {
     
     required init(view: FeedViewProtocol) {
         self.view = view
-        feedTableDataManager = FeedTableDataManager(feedTableView: view.feedTableView)
     }
     
     // MARK: - FeedPresenterProtocol methods
@@ -38,6 +37,10 @@ class FeedPresenter: FeedPresenterProtocol {
     
     func add(videos: [VideoEntity]) {
         feedTableDataManager.add(videos: videos)
+    }
+    
+    func downloadVideos() {
+        interactor.downloadVideos()
     }
     
 }

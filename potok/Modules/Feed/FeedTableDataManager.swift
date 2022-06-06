@@ -10,6 +10,7 @@ import UIKit
 
 class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate, FeedTableViewCellDelegate {
     
+    weak var presenter: FeedPresenterProtocol!
     weak var feedTableView: UITableView!
     
     var videos = [VideoEntity]()

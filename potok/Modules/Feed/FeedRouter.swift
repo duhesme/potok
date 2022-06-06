@@ -15,7 +15,7 @@ class FeedRouter: FeedRouterProtocol {
         self.viewController = viewController
     }
     
-    func openAboutViewController() {
+    func openAuthorWebPage() {
         
     }
     

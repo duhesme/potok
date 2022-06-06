@@ -13,10 +13,12 @@ class FeedAssembly: FeedAssemblyProtocol {
         let presenter = FeedPresenter(view: viewController)
         let interactor = FeedInteractor(presenter: presenter)
         let router = FeedRouter(viewController: viewController)
+        let feedTableDataManager = FeedTableDataManager(feedTableView: viewController.feedTableView)
         
         viewController.presenter = presenter
         presenter.interactor = interactor
         presenter.router = router
+        presenter.feedTableDataManager = feedTableDataManager
     }
     
 }
