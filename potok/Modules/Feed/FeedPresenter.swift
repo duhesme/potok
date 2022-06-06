@@ -17,8 +17,11 @@ class FeedPresenter: FeedPresenterProtocol {
     var interactor: FeedInteractorProtocol!
     var router: FeedRouterProtocol!
     
+    var feedTableDataManager: FeedTableDataManager!
+    
     required init(view: FeedViewProtocol) {
         self.view = view
+        feedTableDataManager = FeedTableDataManager(feedTableView: view.feedTableView)
     }
     
     // MARK: - FeedPresenterProtocol methods
@@ -32,7 +35,7 @@ class FeedPresenter: FeedPresenterProtocol {
     }
     
     func saveButtonPressed() {
-        
+
     }
     
     func add(videos: [VideoEntity]) {

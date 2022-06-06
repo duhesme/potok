@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol FeedViewProtocol: AnyObject {
+    var feedTableView: UITableView! { get }
+    
     func addVideos(forIndexPaths indexPaths: [IndexPath])
 }
 

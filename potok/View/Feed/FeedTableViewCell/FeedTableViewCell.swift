@@ -8,11 +8,17 @@
 import UIKit
 import AVFoundation
 
+protocol FeedTableViewCellDelegate: AnyObject {
+    func likeButtonPressed()
+}
+
 class FeedTableViewCell: UITableViewCell {
 
     class var identifier: String {
         return "FeedTableViewCell"
     }
+    
+    weak var delegate: FeedTableViewCellDelegate?
     
     var actualContentView = UIView()
     
@@ -28,8 +34,9 @@ class FeedTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        likeButton.addTarget(self, action: #selector(likeButtonPressed), for: .touchUpInside)
         setUpLayoutConstraints()
-        likeButton.setImage(Asset.Assets.likeButton.image, for: .normal)
+        updateLikeButtonImage(isFavorite: false)
     }
     
     required init?(coder: NSCoder) {
@@ -55,8 +62,20 @@ class FeedTableViewCell: UITableViewCell {
         actualContentView.layer.insertSublayer(playerLayer, at: 1)
     }
     
+    private func updateLikeButtonImage(isFavorite: Bool) {
+        if isFavorite {
+            likeButton.setImage(Asset.Assets.likeButtonRed.image, for: .normal)
+        } else {
+            likeButton.setImage(Asset.Assets.likeButton.image, for: .normal)
+        }
+    }
+    
     private func play() {
         player.play()
+    }
+    
+    @objc private func likeButtonPressed() {
+        delegate?.likeButtonPressed()
     }
     
 }
