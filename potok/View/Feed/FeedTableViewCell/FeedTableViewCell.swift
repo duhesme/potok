@@ -104,6 +104,8 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     @objc private func likeButtonPressed() {
+        entity.isFavorite.toggle()
+        updateLikeButtonImage(isFavorite: entity.isFavorite)
         delegate?.likeButtonPressed()
     }
     

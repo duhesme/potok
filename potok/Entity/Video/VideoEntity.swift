@@ -13,5 +13,5 @@ struct VideoEntity {
     let authorPictureURL: URL
     let authorURL: URL
     let duration: Int
-    let isFavorite: Bool = false
+    var isFavorite: Bool = false
 }
