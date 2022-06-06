@@ -25,10 +25,6 @@ class FeedViewController: UIViewController, FeedViewProtocol {
         assembly.assemble(withViewController: self)
         presenter.configureView()
         presenter.downloadVideos()
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            (self.feedTableView.visibleCells[0] as! FeedTableViewCell).play()
-//        }
     }
     
 }

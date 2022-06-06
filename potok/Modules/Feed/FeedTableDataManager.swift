@@ -13,6 +13,8 @@ class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate
     weak var presenter: FeedPresenterProtocol!
     weak var feedTableView: UITableView!
     
+    weak var currentVideoCell: FeedTableViewCell?
+    
     var videos = [VideoEntity]()
     
     init(feedTableView: UITableView) {
@@ -32,6 +34,7 @@ class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate
         
         DispatchQueue.main.sync {
             feedTableView.insertRows(at: indexPathsToUpdate, with: .none)
+            currentVideoCell = (self.feedTableView.visibleCells[0] as? FeedTableViewCell)
         }
     }
     
@@ -43,12 +46,19 @@ class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
         cell.configure(withVideoEntity: videos[indexPath.row])
         cell.delegate = self
-        
         return cell
     }
     
     func likeButtonPressed() {
         print("likeButtonPressed()")
+    }
+    
+    /// This method calls when user scrolls to next video. At this point video that was scrolled need to be stopped.
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        currentVideoCell?.stop()
+        currentVideoCell = (self.feedTableView.visibleCells[0] as! FeedTableViewCell)
+        currentVideoCell?.play()
+        print("scrollViewDidEndDecelerating")
     }
     
 }

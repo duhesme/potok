@@ -13,7 +13,7 @@ protocol FeedTableViewCellDelegate: AnyObject {
 }
 
 class FeedTableViewCell: UITableViewCell {
-
+    
     class var identifier: String {
         return "FeedTableViewCell"
     }
@@ -58,7 +58,7 @@ class FeedTableViewCell: UITableViewCell {
             timeRange: CMTimeRange(start: .zero, end: CMTimeMake(value: Int64(duration), timescale: 1))
         )
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        playerLayer.frame = UIScreen.main.bounds //actualContentView.layer.bounds
+        playerLayer.frame = UIScreen.main.bounds
         actualContentView.layer.insertSublayer(playerLayer, at: 1)
     }
     
@@ -70,8 +70,12 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
-    private func play() {
+    func play() {
         player.play()
+    }
+    
+    func stop() {
+        player.pause()
     }
     
     @objc private func likeButtonPressed() {
