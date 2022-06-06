@@ -16,8 +16,8 @@ class VideoManager {
     
     weak var delegate: VideoMangerDelegate?
     
-    func downloadPopularVideos() {
-        performRequestForPopularVideoDownloading(withStringURL: K.PexelsAPI.popularVideos)
+    func downloadPopularVideos(page: Int = 1, videosPerPage perPage: Int = 15) {
+        performRequestForPopularVideoDownloading(withStringURL: "\(K.PexelsAPI.popularVideos)?page=\(page)&per_page=\(perPage)")
     }
     
     func performRequestForPopularVideoDownloading(withStringURL stringURL: String) {
