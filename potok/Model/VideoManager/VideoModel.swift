@@ -10,6 +10,7 @@ import Foundation
 struct VideoModel {
     let id: Int
     let url: URL
+    let webPageURL: URL
     let duration: Int
     let authorPictureURL: URL
     let authorURL: URL
