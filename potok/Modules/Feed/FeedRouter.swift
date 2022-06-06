@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FeedRouter: FeedRouterProtocol {
     
@@ -15,8 +16,8 @@ class FeedRouter: FeedRouterProtocol {
         self.viewController = viewController
     }
     
-    func openAuthorWebPage() {
-        
+    func open(AuthorWebPageByURL url: URL) {
+        UIApplication.shared.open(url)
     }
     
 }

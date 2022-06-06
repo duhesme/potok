@@ -28,7 +28,7 @@ extension FeedInteractor: VideoMangerDelegate {
     
     func didDownloadVideos(_ videoManager: VideoManager, videos: [VideoModel]) {
         let videoEntities = videos.map {
-            return VideoEntity(videoURL: $0.url, authorURL: $0.pictureURL, duration: $0.duration)
+            return VideoEntity(videoURL: $0.url, authorPictureURL: $0.authorPictureURL, authorURL: $0.authorURL, duration: $0.duration)
         }
         
         presenter.add(videos: videoEntities)

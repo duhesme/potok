@@ -11,6 +11,7 @@ struct VideoData: Decodable {
     let id: Int
     let url: String
     let duration: Int
+    let user: UserData
     let video_files: [VideoFileData]
     let video_pictures: [VideoPicture]
 }

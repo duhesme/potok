@@ -11,7 +11,7 @@ import Kingfisher
 
 protocol FeedTableViewCellDelegate: AnyObject {
     func likeButtonPressed()
-    func authorButtonPressed()
+    func authorButtonPressed(authorURL url: URL)
 }
 
 class FeedTableViewCell: UITableViewCell {
@@ -34,6 +34,8 @@ class FeedTableViewCell: UITableViewCell {
     private var playerItem: AVPlayerItem!
     private var playerLooper: AVPlayerLooper!
     
+    var entity: VideoEntity!
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         likeButton.addTarget(self, action: #selector(likeButtonPressed), for: .touchUpInside)
@@ -47,8 +49,9 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     func configure(withVideoEntity entity: VideoEntity) {
+        self.entity = entity
         configureAVPlayer(withVideoURL: entity.videoURL, andDuration: entity.duration)
-        configureAuthorButton(withauthorImageURL: entity.authorURL)
+        configureAuthorButton(withauthorImageURL: entity.authorPictureURL)
         updateLikeButtonImage(isFavorite: entity.isFavorite)
         play()
     }
@@ -97,7 +100,7 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     @objc private func authorButtonPressed() {
-        delegate?.authorButtonPressed()
+        delegate?.authorButtonPressed(authorURL: entity.authorURL)
     }
     
 }

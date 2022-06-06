@@ -9,6 +9,7 @@ import Foundation
 
 struct VideoEntity {
     let videoURL: URL
+    let authorPictureURL: URL
     let authorURL: URL
     let duration: Int
     let isFavorite: Bool = false

@@ -11,5 +11,6 @@ struct VideoModel {
     let id: Int
     let url: URL
     let duration: Int
-    let pictureURL: URL
+    let authorPictureURL: URL
+    let authorURL: URL
 }

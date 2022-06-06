@@ -31,8 +31,8 @@ class FeedPresenter: FeedPresenterProtocol {
         print("likeButtonPressed()")
     }
     
-    func authorButtonPressed() {
-        print("authorButtonPressed()")
+    func authorButtonPressed(authorURL: URL) {
+        router.open(AuthorWebPageByURL: authorURL)
     }
     
     func saveButtonPressed() {

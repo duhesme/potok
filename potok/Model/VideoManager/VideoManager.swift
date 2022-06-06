@@ -64,8 +64,8 @@ class VideoManager {
             
             var videos = [VideoModel]()
             for video in decodedData.videos {
-                if let videoURL = URL(string: video.video_files[0].link), let pictureURL = URL(string: video.video_pictures[0].picture) {
-                    videos.append(VideoModel(id: video.id, url: videoURL, duration: video.duration, pictureURL: pictureURL))
+                if let videoURL = URL(string: video.video_files[0].link), let pictureURL = URL(string: video.video_pictures[0].picture), let authorURL = URL(string: video.user.url) {
+                    videos.append(VideoModel(id: video.id, url: videoURL, duration: video.duration, authorPictureURL: pictureURL, authorURL: authorURL))
                 }
             }
             
