@@ -22,6 +22,7 @@ protocol FeedPresenterProtocol: AnyObject {
     func configureView()
     func likeButtonPressed()
     func saveButtonPressed()
+    func authorButtonPressed()
     func add(videos: [VideoEntity])
     func downloadVideos()
 }

@@ -19,6 +19,7 @@ class FeedAssembly: FeedAssemblyProtocol {
         presenter.interactor = interactor
         presenter.router = router
         presenter.feedTableDataManager = feedTableDataManager
+        feedTableDataManager.presenter = presenter
     }
     
 }

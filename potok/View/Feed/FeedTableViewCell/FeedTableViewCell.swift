@@ -11,6 +11,7 @@ import Kingfisher
 
 protocol FeedTableViewCellDelegate: AnyObject {
     func likeButtonPressed()
+    func authorButtonPressed()
 }
 
 class FeedTableViewCell: UITableViewCell {
@@ -36,6 +37,7 @@ class FeedTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         likeButton.addTarget(self, action: #selector(likeButtonPressed), for: .touchUpInside)
+        authorDetailsButton.addTarget(self, action: #selector(authorButtonPressed), for: .touchUpInside)
         setUpLayoutConstraints()
         updateLikeButtonImage(isFavorite: false)
     }
@@ -92,6 +94,10 @@ class FeedTableViewCell: UITableViewCell {
     
     @objc private func likeButtonPressed() {
         delegate?.likeButtonPressed()
+    }
+    
+    @objc private func authorButtonPressed() {
+        delegate?.authorButtonPressed()
     }
     
 }

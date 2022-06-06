@@ -28,7 +28,11 @@ class FeedPresenter: FeedPresenterProtocol {
     }
     
     func likeButtonPressed() {
-        
+        print("likeButtonPressed()")
+    }
+    
+    func authorButtonPressed() {
+        print("authorButtonPressed()")
     }
     
     func saveButtonPressed() {

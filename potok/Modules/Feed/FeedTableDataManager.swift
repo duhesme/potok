@@ -50,7 +50,11 @@ class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func likeButtonPressed() {
-        print("likeButtonPressed()")
+        presenter.likeButtonPressed()
+    }
+    
+    func authorButtonPressed() {
+        presenter.authorButtonPressed()
     }
     
     /// This method calls when user scrolls to next video. At this point video that was scrolled need to be stopped.
