@@ -22,6 +22,7 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     weak var delegate: FeedTableViewCellDelegate?
+    var indexPath: IndexPath?
     
     var actualContentView = UIView()
     
@@ -56,8 +57,9 @@ class FeedTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(withVideoEntity entity: VideoEntity) {
+    func configure(withVideoEntity entity: VideoEntity, andIndexPath indexPath: IndexPath) {
         self.entity = entity
+        self.indexPath = indexPath
         configureAVPlayer(withVideoURL: entity.videoURL, andDuration: entity.duration)
         configureAuthorButton(withauthorImageURL: entity.authorPictureURL)
         updateLikeButtonImage(isFavorite: entity.isFavorite)

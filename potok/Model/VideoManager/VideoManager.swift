@@ -8,7 +8,7 @@
 import Foundation
 
 protocol VideoMangerDelegate: AnyObject {
-    func didDownloadVideos(_ videoManager: VideoManager, videos: [VideoModel])
+    func didDownloadVideos(_ videoManager: VideoManager, videos: [VideoModel], downloadedPage page: Int, resultPerPage perPage: Int, totalVideos total: Int)
     func didFailWithErrorDownloadingUser(error: Error?)
 }
 
@@ -46,7 +46,7 @@ class VideoManager {
                     let statusCode = httpResponse.statusCode
                     if statusCode == 200 {
                         if let videos = self.parseJSON(safeData) {
-                            self.delegate?.didDownloadVideos(self, videos: videos)
+                            self.delegate?.didDownloadVideos(self, videos: videos.videos, downloadedPage: videos.page, resultPerPage: videos.per_page, totalVideos: videos.total_results)
                         }
                     } else {
                         self.delegate?.didFailWithErrorDownloadingUser(error: error)
@@ -57,7 +57,7 @@ class VideoManager {
         }
     }
     
-    private func parseJSON(_ videoData: Data) -> [VideoModel]? {
+    private func parseJSON(_ videoData: Data) -> PopularVideosModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(PopularVideosData.self, from: videoData)
@@ -69,7 +69,9 @@ class VideoManager {
                 }
             }
             
-            return videos
+            let videosModel = PopularVideosModel(page: decodedData.page, per_page: decodedData.per_page, total_results: decodedData.total_results, videos: videos)
+            
+            return videosModel
         } catch {
             print(error)
             delegate?.didFailWithErrorDownloadingUser(error: error)

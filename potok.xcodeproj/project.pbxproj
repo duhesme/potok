@@ -40,6 +40,7 @@
 		84E35ED6284E33BA00194BD4 /* FeedTableDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E35ED5284E33BA00194BD4 /* FeedTableDataManager.swift */; };
 		84E35ED8284E52EF00194BD4 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E35ED7284E52EF00194BD4 /* UserData.swift */; };
 		84E35EDA284E664800194BD4 /* ActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E35ED9284E664800194BD4 /* ActionManager.swift */; };
+		84E35EDC284E6CD900194BD4 /* PopularVideosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E35EDB284E6CD900194BD4 /* PopularVideosModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		84E35ED5284E33BA00194BD4 /* FeedTableDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableDataManager.swift; sourceTree = "<group>"; };
 		84E35ED7284E52EF00194BD4 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		84E35ED9284E664800194BD4 /* ActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManager.swift; sourceTree = "<group>"; };
+		84E35EDB284E6CD900194BD4 /* PopularVideosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularVideosModel.swift; sourceTree = "<group>"; };
 		EBB2F48649863BBBFE074817 /* Pods-potok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-potok.debug.xcconfig"; path = "Target Support Files/Pods-potok/Pods-potok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				84CC1231284B98DB00106A46 /* VideoModel.swift */,
 				84CC1240284BD22600106A46 /* PopularVideosData.swift */,
 				84E35ED7284E52EF00194BD4 /* UserData.swift */,
+				84E35EDB284E6CD900194BD4 /* PopularVideosModel.swift */,
 			);
 			path = VideoManager;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				84CF925B284A970400ED0719 /* FeedAssembly.swift in Sources */,
 				84E35ED6284E33BA00194BD4 /* FeedTableDataManager.swift in Sources */,
 				84CC122E284B86C700106A46 /* BounceButton.swift in Sources */,
+				84E35EDC284E6CD900194BD4 /* PopularVideosModel.swift in Sources */,
 				84DB9B42284CDBFE00BCF012 /* IB-Segues+Generated.swift in Sources */,
 				84DB9B43284CDBFE00BCF012 /* Strings+Generated.swift in Sources */,
 				84CC1234284B9D1900106A46 /* Constants.swift in Sources */,

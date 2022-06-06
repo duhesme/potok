@@ -44,7 +44,7 @@ class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
-        cell.configure(withVideoEntity: videos[indexPath.row])
+        cell.configure(withVideoEntity: videos[indexPath.row], andIndexPath: indexPath)
         cell.delegate = self
         return cell
     }
@@ -66,7 +66,12 @@ class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate
         currentVideoCell?.stop()
         currentVideoCell = (self.feedTableView.visibleCells[0] as! FeedTableViewCell)
         currentVideoCell?.play()
-        print("scrollViewDidEndDecelerating")
+        
+        
+        guard let cell = feedTableView.visibleCells.last as? FeedTableViewCell, let index = cell.indexPath?.row, videos.count > 2 else { return }
+        if index == videos.count - 2 {
+            presenter.downloadVideos()
+        }
     }
     
 }
