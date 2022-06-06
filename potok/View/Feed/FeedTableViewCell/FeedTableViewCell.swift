@@ -38,9 +38,14 @@ class FeedTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        commentsButton.setBackgroundImage(Asset.Assets.commentButton.image, for: .normal)
+        
         likeButton.addTarget(self, action: #selector(likeButtonPressed), for: .touchUpInside)
         authorDetailsButton.addTarget(self, action: #selector(authorButtonPressed), for: .touchUpInside)
+        
         setUpLayoutConstraints()
+        
         updateLikeButtonImage(isFavorite: false)
     }
     
