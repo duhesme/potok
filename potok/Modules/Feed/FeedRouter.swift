@@ -21,7 +21,7 @@ class FeedRouter: FeedRouterProtocol {
     }
     
     func open(VideoWebPageByURL url: URL) {
-        UIApplication.shared.open(url)
+        ActionManager.shared.share(url: url, sourceViewController: viewController)
     }
     
 }
