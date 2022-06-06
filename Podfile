@@ -8,5 +8,6 @@ target 'potok' do
   # Pods for potok
   pod 'SwiftGen'
   pod 'SnapKit'
+  pod 'Kingfisher', '~> 6.0'
 
 end
