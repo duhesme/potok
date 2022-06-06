@@ -57,6 +57,10 @@ class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate
         presenter.authorButtonPressed(authorURL: url)
     }
     
+    func shareButtonPressed(withURL url: URL) {
+        presenter.shareButtonPressed(withURL: url)
+    }
+    
     /// This method calls when user scrolls to next video. At this point video that was scrolled need to be stopped.
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         currentVideoCell?.stop()

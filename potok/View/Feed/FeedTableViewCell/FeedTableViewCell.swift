@@ -12,6 +12,7 @@ import Kingfisher
 protocol FeedTableViewCellDelegate: AnyObject {
     func likeButtonPressed()
     func authorButtonPressed(authorURL url: URL)
+    func shareButtonPressed(withURL url: URL)
 }
 
 class FeedTableViewCell: UITableViewCell {
@@ -44,6 +45,7 @@ class FeedTableViewCell: UITableViewCell {
         
         likeButton.addTarget(self, action: #selector(likeButtonPressed), for: .touchUpInside)
         authorDetailsButton.addTarget(self, action: #selector(authorButtonPressed), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(shareButtonPressed), for: .touchUpInside)
         
         setUpLayoutConstraints()
         
@@ -107,6 +109,10 @@ class FeedTableViewCell: UITableViewCell {
     
     @objc private func authorButtonPressed() {
         delegate?.authorButtonPressed(authorURL: entity.authorURL)
+    }
+    
+    @objc private func shareButtonPressed() {
+        delegate?.shareButtonPressed(withURL: entity.webPageURL)
     }
     
 }

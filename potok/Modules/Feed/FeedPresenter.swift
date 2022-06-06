@@ -35,6 +35,10 @@ class FeedPresenter: FeedPresenterProtocol {
         router.open(AuthorWebPageByURL: authorURL)
     }
     
+    func shareButtonPressed(withURL url: URL) {
+        router.open(VideoWebPageByURL: url)
+    }
+    
     func saveButtonPressed() {
 
     }

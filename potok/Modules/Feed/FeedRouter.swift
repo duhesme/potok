@@ -20,4 +20,8 @@ class FeedRouter: FeedRouterProtocol {
         UIApplication.shared.open(url)
     }
     
+    func open(VideoWebPageByURL url: URL) {
+        UIApplication.shared.open(url)
+    }
+    
 }

@@ -23,6 +23,7 @@ protocol FeedPresenterProtocol: AnyObject {
     func likeButtonPressed()
     func saveButtonPressed()
     func authorButtonPressed(authorURL: URL)
+    func shareButtonPressed(withURL url: URL)
     func add(videos: [VideoEntity])
     func downloadVideos()
 }
@@ -37,4 +38,5 @@ protocol FeedAssemblyProtocol: AnyObject {
 
 protocol FeedRouterProtocol: AnyObject {
     func open(AuthorWebPageByURL url: URL)
+    func open(VideoWebPageByURL url: URL)
 }
