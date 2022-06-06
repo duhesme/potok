@@ -24,26 +24,10 @@ class FeedViewController: UIViewController, FeedViewProtocol {
         
         assembly.assemble(withViewController: self)
         presenter.configureView()
-        
-        feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.identifier)
-        feedTableView.dataSource = self
+
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 //            (self.feedTableView.visibleCells[0] as! FeedTableViewCell).play()
 //        }
-    }
-    
-}
-
-extension FeedViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.videos.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier) as! FeedTableViewCell
-        cell.configure(withVideoEntity: presenter.videos[indexPath.row])
-        return cell
     }
     
 }

@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 class FeedPresenter: FeedPresenterProtocol {
     
     var videos = [VideoEntity]()
@@ -39,16 +37,7 @@ class FeedPresenter: FeedPresenterProtocol {
     }
     
     func add(videos: [VideoEntity]) {
-        
-        
-        var indexPathsToUpdate: [IndexPath] = []
-        for index in self.videos.count..<(self.videos.count + videos.count) {
-            indexPathsToUpdate.append(IndexPath(row: index, section: 0))
-        }
-        self.videos.append(contentsOf: videos)
-        DispatchQueue.main.sync {
-            self.view.addVideos(forIndexPaths: indexPathsToUpdate)
-        }
+        feedTableDataManager.add(videos: videos)
     }
     
 }

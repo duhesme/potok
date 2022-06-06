@@ -17,11 +17,12 @@ class FeedTableDataManager: NSObject, UITableViewDataSource, UITableViewDelegate
     init(feedTableView: UITableView) {
         super.init()
         self.feedTableView = feedTableView
+        self.feedTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.identifier)
         self.feedTableView.dataSource = self
         self.feedTableView.delegate = self
     }
     
-    func add(vidos: [VideoEntity]) {
+    func add(videos: [VideoEntity]) {
         var indexPathsToUpdate: [IndexPath] = []
         for index in self.videos.count..<(self.videos.count + videos.count) {
             indexPathsToUpdate.append(IndexPath(row: index, section: 0))
