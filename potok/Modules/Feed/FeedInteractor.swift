@@ -36,7 +36,7 @@ extension FeedInteractor: VideoMangerDelegate {
             isLastPage = true
         }
         
-        guard videos.count < 0 else { return }
+        guard videos.count > 0 else { return }
         let videoEntities = videos.map {
             return VideoEntity(videoURL: $0.url, webPageURL: $0.webPageURL, authorPictureURL: $0.authorPictureURL, authorURL: $0.authorURL, duration: $0.duration)
         }
